@@ -1,0 +1,122 @@
+/* 全体のレイアウト */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    box-sizing: border-box;
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+/* モバイル用のレスポンシブ対応 */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%; /* モバイルでは幅を狭める */
+    }
+
+    li {
+        flex-direction: column; /* モバイルでは縦並びにする */
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* ホバー時のトランジション */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* ToDoリストのレイアウト */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* カードスタイル */
+li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+/* 削除ボタンのスタイル（固定幅とフレックスの影響を防ぐ） */
+li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 80px;  /* ボタンの幅を固定 */
+    padding: 5px 0;  /* 高さを調整 */
+    cursor: pointer;
+    font-size: 0.9rem;  /* フォントサイズを調整 */
+    text-align: center;  /* ボタンのテキストを中央揃え */
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;  /* ボタンが縮小されないようにする */
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+/* リスト項目のスタイル */
+li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;  /* テキストとボタンを左右に分ける */
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+li span {
+    flex-grow: 1;  /* テキスト部分が余ったスペースを埋める */
+    margin-right: 10px;  /* ボタンとの間にスペースを確保 */
+}

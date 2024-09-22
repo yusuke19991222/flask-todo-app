@@ -1,6 +1,6 @@
 // ToDoリストをサーバーから取得して表示する
 window.addEventListener('load', function() {
-    fetch('http://127.0.0.1:5000/todos')
+    fetch('https://flask-todo-app-khxm.onrender.com/todos')
         .then(response => response.json())
         .then(data => {
             data.forEach(function(todoText) {
@@ -26,7 +26,7 @@ function addTodo() {
 
     if (todoText !== "") {
         // サーバーに新しいタスクを送信する
-        fetch('http://127.0.0.1:5000/todos', {
+        fetch('https://flask-todo-app-khxm.onrender.com/todos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function addTodoItem(todoText) {
         const index = Array.from(li.parentNode.children).indexOf(li);
 
         // サーバーに削除リクエストを送信
-        fetch(`http://127.0.0.1:5000/todos/${index}`, {
+        fetch(`https://flask-todo-app-khxm.onrender.com/todos/${index}`, {
             method: 'DELETE',
         })
         .then(response => response.json())
